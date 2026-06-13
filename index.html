@@ -63,14 +63,14 @@ button:active{transform:translateY(7px);box-shadow:0 2px 0 rgba(0,0,0,.25)}
 <script>
 let currentOrgan=null,currentQuestionType=null,audioCtx=null;
 const organs=[
-{image:"images/brain.png",thai:"สมอง",english:"brain",function:"ควบคุมความคิด ความจำ และการสั่งงานของร่างกาย",care:"พักผ่อนให้เพียงพอ กินอาหารมีประโยชน์ และระวังศีรษะกระแทก"},
-{image:"images/heart.png",thai:"หัวใจ",english:"heart",function:"สูบฉีดเลือดไปเลี้ยงส่วนต่าง ๆ ของร่างกาย",care:"ออกกำลังกาย กินอาหารที่มีประโยชน์ และไม่กินอาหารมันมากเกินไป"},
-{image:"images/lungs.png",thai:"ปอด",english:"lungs",function:"ช่วยในการหายใจ รับออกซิเจนเข้าสู่ร่างกาย",care:"หลีกเลี่ยงควันบุหรี่ ฝุ่น และออกกำลังกายสม่ำเสมอ"},
-{image:"images/liver.png",thai:"ตับ",english:"liver",function:"ช่วยกรองของเสียและช่วยย่อยอาหารบางชนิด",care:"กินอาหารสะอาด ไม่กินของหมักดองมากเกินไป และล้างมือก่อนกินอาหาร"},
-{image:"images/kidneys.png",thai:"ไต",english:"kidneys",function:"กรองของเสียออกจากเลือด และขับออกเป็นปัสสาวะ",care:"ดื่มน้ำสะอาดให้เพียงพอ และไม่กินเค็มมากเกินไป"},
-{image:"images/stomach.png",thai:"กระเพาะอาหาร",english:"stomach",function:"ย่อยอาหารให้ละเอียดมากขึ้น",care:"กินอาหารตรงเวลา เคี้ยวอาหารให้ละเอียด และไม่กินเผ็ดจัด"},
-{image:"images/small_intestine.png",thai:"ลำไส้เล็ก",english:"small intestine",function:"ย่อยอาหารต่อและดูดซึมสารอาหารเข้าสู่ร่างกาย",care:"กินอาหารสะอาด กินผักผลไม้ และล้างมือก่อนกินอาหาร"},
-{image:"images/large_intestine.png",thai:"ลำไส้ใหญ่",english:"large intestine",function:"ดูดซึมน้ำและขับกากอาหารออกจากร่างกาย",care:"ดื่มน้ำให้เพียงพอ กินผักผลไม้ และขับถ่ายให้เป็นเวลา"}
+{image:"RandomInternalOrganGameGrade2/images/brain.png",thai:"สมอง",english:"brain",function:"ควบคุมความคิด ความจำ และการสั่งงานของร่างกาย",care:"พักผ่อนให้เพียงพอ กินอาหารมีประโยชน์ และระวังศีรษะกระแทก"},
+{image:"RandomInternalOrganGameGrade2/images/heart.png",thai:"หัวใจ",english:"heart",function:"สูบฉีดเลือดไปเลี้ยงส่วนต่าง ๆ ของร่างกาย",care:"ออกกำลังกาย กินอาหารที่มีประโยชน์ และไม่กินอาหารมันมากเกินไป"},
+{image:"RandomInternalOrganGameGrade2/images/lungs.png",thai:"ปอด",english:"lungs",function:"ช่วยในการหายใจ รับออกซิเจนเข้าสู่ร่างกาย",care:"หลีกเลี่ยงควันบุหรี่ ฝุ่น และออกกำลังกายสม่ำเสมอ"},
+{image:"RandomInternalOrganGameGrade2/images/liver.png",thai:"ตับ",english:"liver",function:"ช่วยกรองของเสียและช่วยย่อยอาหารบางชนิด",care:"กินอาหารสะอาด ไม่กินของหมักดองมากเกินไป และล้างมือก่อนกินอาหาร"},
+{image:"RandomInternalOrganGameGrade2/images/kidneys.png",thai:"ไต",english:"kidneys",function:"กรองของเสียออกจากเลือด และขับออกเป็นปัสสาวะ",care:"ดื่มน้ำสะอาดให้เพียงพอ และไม่กินเค็มมากเกินไป"},
+{image:"RandomInternalOrganGameGrade2/images/stomach.png",thai:"กระเพาะอาหาร",english:"stomach",function:"ย่อยอาหารให้ละเอียดมากขึ้น",care:"กินอาหารตรงเวลา เคี้ยวอาหารให้ละเอียด และไม่กินเผ็ดจัด"},
+{image:"RandomInternalOrganGameGrade2/images/small_intestine.png",thai:"ลำไส้เล็ก",english:"small intestine",function:"ย่อยอาหารต่อและดูดซึมสารอาหารเข้าสู่ร่างกาย",care:"กินอาหารสะอาด กินผักผลไม้ และล้างมือก่อนกินอาหาร"},
+{image:"RandomInternalOrganGameGrade2/images/large_intestine.png",thai:"ลำไส้ใหญ่",english:"large intestine",function:"ดูดซึมน้ำและขับกากอาหารออกจากร่างกาย",care:"ดื่มน้ำให้เพียงพอ กินผักผลไม้ และขับถ่ายให้เป็นเวลา"}
 ];
 function randomOrgan(){
 const index=Math.floor(Math.random()*organs.length);currentOrgan=organs[index];currentQuestionType=Math.random()<.5?"function":"care";
